@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace CadastroPessoas
 {
-    internal class Pessoas
+    public class Pessoas
     {
+        public string Nome;
+        public int Idade;
+
+        public void Apresentar()
+        {
+            Console.WriteLine("Nome:  " + Nome);
+            Console.WriteLine("Idade: " + Idade);
+        }
+
+        public Pessoas(string nome,int idade)
+            {
+            Nome = nome;
+            Idade = idade;
+            }
+        }
     }
-}

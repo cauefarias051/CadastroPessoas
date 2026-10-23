@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace CadastroPessoas
 {
-    internal class Cliente
+    public class Cliente : Pessoas
     {
+        public string CodigoCliente;
+        public void ExibirDadosCLiente()
+        {
+            Console.WriteLine("Codigo cliente " + CodigoCliente);
+            Apresentar();
+        }
+        public Cliente(string nome, int idade, string codigoCliente)
+            : base(nome, idade)
+        {
+            CodigoCliente= codigoCliente;
+        }
     }
 }
