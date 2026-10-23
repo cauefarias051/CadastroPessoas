@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CadastroPessoas
 {
-    public class Pessoas
+    public abstract class Pessoas
     {
         public string Nome;
         public int Idade;
