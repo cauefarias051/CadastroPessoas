@@ -10,43 +10,26 @@ namespace CadastroPessoas
     {
         static void Main(string[] args)
         {
-            Cliente cliente = new Cliente(
-                "Ana Souza",
-                28,
-                "CLI-001"
-            );
+            Cliente cliente = new Cliente("Ana Souza", 28, "CLI-001");
+            Funcionario funcionario = new Funcionario("Carlos Lima", 35, 4500.00m);
+            Gerente gerente = new Gerente("Marina Alves", 42, 7000.00m, "Tecnologia");
 
-            Funcionario funcionario = new Funcionario(
-                "Carlos Lima",
-                35,
-                4500.00m
-            );
+            cliente.Idade = 29;
 
-            Gerente gerente = new Gerente(
-                "Marina Alves",
-                42,
-                7000.00m,
-                "Tecnologia"
-            );
-
-            Console.WriteLine("=== TESTE DE SOBRECARGA ===");
+            Console.WriteLine("Idade do cliente: " + cliente.Idade);
 
             cliente.Apresentar();
-            Console.WriteLine();
-
             cliente.Apresentar(true);
-            Console.WriteLine();
 
-            Console.WriteLine("=== CLIENTE ===");
-            cliente.ExibirDadosCliente();
+            Cliente clienteSemCodigo = new Cliente("Bruno Lima", 31);
 
-            Console.WriteLine();
-            Console.WriteLine("=== FUNCIONÁRIO ===");
-            funcionario.ExibirDadosFuncionario();
+            Pessoas[] pessoas = new Pessoas[] { cliente, funcionario, gerente };
 
-            Console.WriteLine();
-            Console.WriteLine("=== GERENTE ===");
-            gerente.ExibirDadosGerente();
+            foreach (Pessoas pessoa in pessoas)
+            {
+                Console.WriteLine();
+                pessoa.Apresentar();
+            }
 
             Console.ReadKey();
         }
