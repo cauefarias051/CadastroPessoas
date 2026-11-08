@@ -9,19 +9,30 @@ namespace CadastroPessoas
     public class Funcionario : Pessoas
     {
         public decimal Salario;
-        public decimal CalcularBonus() { 
+
+        public decimal CalcularBonus()
+        {
             return Salario * 0.10m;
         }
+
         public void ExibirDadosFuncionario()
         {
-            Console.WriteLine("Salário: " + Salario);
-            Console.WriteLine("Bônus: " + CalcularBonus());
             Apresentar();
         }
+
+        public override void Apresentar()
+        {
+            Console.WriteLine("Tipo: Funcionário");
+            Console.WriteLine("Nome: " + GetNome());
+            Console.WriteLine("Idade: " + Idade);
+            Console.WriteLine("Salário: " + Salario);
+            Console.WriteLine("Bônus: " + CalcularBonus());
+        }
+
         public Funcionario(string nome, int idade, decimal salario)
-            : base(nome, idade) 
-        { 
-            Salario= salario;
+            : base(nome, idade)
+        {
+            Salario = salario;
         }
     }
 }
