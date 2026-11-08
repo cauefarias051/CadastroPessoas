@@ -14,22 +14,31 @@ namespace CadastroPessoas
                 "Ana Souza",
                 28,
                 "CLI-001"
-                );
+            );
 
             Funcionario funcionario = new Funcionario(
                 "Carlos Lima",
                 35,
                 4500.00m
-                );
+            );
+
             Gerente gerente = new Gerente(
                 "Marina Alves",
                 42,
                 7000.00m,
                 "Tecnologia"
-                );
+            );
+
+            Console.WriteLine("=== TESTE DE SOBRECARGA ===");
+
+            cliente.Apresentar();
+            Console.WriteLine();
+
+            cliente.Apresentar(true);
+            Console.WriteLine();
 
             Console.WriteLine("=== CLIENTE ===");
-            cliente.ExibirDadosCLiente();
+            cliente.ExibirDadosCliente();
 
             Console.WriteLine();
             Console.WriteLine("=== FUNCIONÁRIO ===");
