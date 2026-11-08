@@ -8,16 +8,19 @@ namespace CadastroPessoas
 {
     public class Cliente : Pessoas
     {
-        public string CodigoCliente;
-        public void ExibirDadosCLiente()
+        public string CodigoCliente { get; set; }
+
+        public void ExibirDadosCliente()
         {
-            Console.WriteLine("Codigo cliente " + CodigoCliente);
+            Console.WriteLine("Codigo do cliente: " + CodigoCliente);
             Apresentar();
         }
+
         public Cliente(string nome, int idade, string codigoCliente)
             : base(nome, idade)
         {
-            CodigoCliente= codigoCliente;
+            CodigoCliente = codigoCliente;
         }
     }
+}
 }
